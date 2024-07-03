@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AutomatServiceTest.Service\AutomatServiceTest.Service.csproj" />
+    <ProjectReference Include="..\AutomatServiceTest.Abstraction\AutomatServiceTest.Abstraction.csproj" />
   </ItemGroup>
 
 </Project>
