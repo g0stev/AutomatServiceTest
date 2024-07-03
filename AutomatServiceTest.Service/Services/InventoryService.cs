@@ -60,5 +60,63 @@ namespace AutomatServiceTest.Service.Services
                 return false;
             }
         }
+
+        /// <summary>
+        /// Получить список всех товаров
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<ProductResponseDTO>> GetAllProducts()
+        {
+            var products = await _context.Products
+                .AsNoTracking()
+                .ToListAsync();
+
+            var result = _mapper.Map<List<ProductResponseDTO>>(products);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Получить список товаров на складе
+        /// </summary>
+        /// <param name="storageId"></param>
+        /// <returns></returns>
+        public async Task<List<ProductResponseDTO>> GetProducts(int storageId)
+        {
+            var products = await _context.StorageProducts
+                .Include(p=>p.Product)
+                .AsNoTracking()
+                .Where(sp=>sp.StorageId == storageId)
+                .Select(sp=>sp.Product)
+                .ToListAsync();
+
+            var result = _mapper.Map<List<ProductResponseDTO>>(products);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Создать новый товар
+        /// </summary>
+        /// <param name="productModel"></param>
+        /// <returns></returns>
+        public async Task<bool> CreateProduct(CreateProductRequestDTO productModel)
+        {
+            try
+            {
+                var product = _mapper.Map<Product>(productModel);
+
+                _context.Add(product);
+
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogDebug(ex.ToString());
+                return false;
+            }
+        }
     }
 }

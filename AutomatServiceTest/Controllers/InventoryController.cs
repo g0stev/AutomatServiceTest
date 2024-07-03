@@ -32,4 +32,30 @@ public class InventoryController : ControllerBase
             ? Ok()
             : StatusCode(500);
     }
+
+    [HttpGet("GetProducts")]
+    public async Task<IActionResult> GetProducts()
+    {
+        var products = await _inventoryService.GetAllProducts();
+
+        return Ok(products);
+    }
+
+    [HttpGet("GetProducts/{storageId}")]
+    public async Task<IActionResult> GetProducts(int storageId)
+    {
+        var products = await _inventoryService.GetProducts(storageId);
+
+        return Ok(products);
+    }
+
+    [HttpPost("CreateProduct")]
+    public async Task<IActionResult> CreateProduct([FromBody] CreateProductRequestDTO productModel)
+    {
+        var result = await _inventoryService.CreateProduct(productModel);
+
+        return result
+            ? Ok()
+            : StatusCode(500);
+    }
 }
