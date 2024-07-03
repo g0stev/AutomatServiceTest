@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomatServiceTest.Abstract
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomatServiceTest.Service", "AutomatServiceTest.Service\AutomatServiceTest.Service.csproj", "{B6E86067-EB78-4926-81CE-3083AB03C5B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomatServiceTest.Tests", "AutomatServiceTest.Tests\AutomatServiceTest.Tests.csproj", "{4647206A-2414-4202-89C7-29A81E035489}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B6E86067-EB78-4926-81CE-3083AB03C5B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6E86067-EB78-4926-81CE-3083AB03C5B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6E86067-EB78-4926-81CE-3083AB03C5B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4647206A-2414-4202-89C7-29A81E035489}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4647206A-2414-4202-89C7-29A81E035489}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4647206A-2414-4202-89C7-29A81E035489}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4647206A-2414-4202-89C7-29A81E035489}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

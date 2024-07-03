@@ -58,4 +58,34 @@ public class InventoryController : ControllerBase
             ? Ok()
             : StatusCode(500);
     }
+
+    [HttpPost("IncProductInStorage")]
+    public async Task<IActionResult> IncProductInStorage([FromBody] AddProductToStorageRequestDTO storageProductModel)
+    {
+        var result = await _inventoryService.IncProductInStorage(storageProductModel);
+
+        return result
+            ? Ok()
+            : StatusCode(500);
+    }
+
+    [HttpPost("DecProductInStorage")]
+    public async Task<IActionResult> DecProductInStorage([FromBody] AddProductToStorageRequestDTO storageProductModel)
+    {
+        var result = await _inventoryService.DecProductInStorage(storageProductModel);
+
+        return result
+            ? Ok()
+            : StatusCode(500);
+    }
+
+    [HttpPost("AddProductToStorage")]
+    public async Task<IActionResult> AddProductToStorage([FromBody] AddProductToStorageWithCountRequestDTO storageProductModel)
+    {
+        var result = await _inventoryService.AddProductToStorage(storageProductModel);
+
+        return result
+            ? Ok()
+            : StatusCode(500);
+    }
 }

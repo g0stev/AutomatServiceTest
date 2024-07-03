@@ -29,7 +29,7 @@ namespace AutomatServiceTest.Abstraction.IServices
         /// </summary>
         /// <param name="storageId"></param>
         /// <returns></returns>
-        Task<List<ProductResponseDTO>> GetProducts(int storageId);
+        Task<List<ProductInStorageResponseDTO>> GetProducts(int storageId);
 
         /// <summary>
         /// Создать новый товар
@@ -37,5 +37,26 @@ namespace AutomatServiceTest.Abstraction.IServices
         /// <param name="productModel"></param>
         /// <returns></returns>
         Task<bool> CreateProduct(CreateProductRequestDTO productModel);
+
+        /// <summary>
+        /// Увеличить на 1 товар на складе
+        /// </summary>
+        /// <param name="storageProductModel"></param>
+        /// <returns></returns>
+        Task<bool> IncProductInStorage(AddProductToStorageRequestDTO storageProductModel);
+
+        /// <summary>
+        /// Уменьшить на 1 товар на складе
+        /// </summary>
+        /// <param name="storageProductModel"></param>
+        /// <returns></returns>
+        Task<bool> DecProductInStorage(AddProductToStorageRequestDTO storageProductModel);
+
+        /// <summary>
+        /// Добавить товар на склад
+        /// </summary>
+        /// <param name="storageProductModel"></param>
+        /// <returns></returns>
+        Task<bool> AddProductToStorage(AddProductToStorageWithCountRequestDTO storageProductModel);
     }
 }

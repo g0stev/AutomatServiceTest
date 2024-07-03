@@ -19,5 +19,11 @@ public class MappingProfile : Profile
         // Товар
         CreateMap<Product, ProductResponseDTO>();
         CreateMap<CreateProductRequestDTO, Product>();
+
+        // Манипуляции товара на складе
+        CreateMap<AddProductToStorageRequestDTO, StorageProduct>();
+        CreateMap<AddProductToStorageWithCountRequestDTO, StorageProduct>();
+        CreateMap<AddProductToStorageRequestDTO, AddProductToStorageWithCountRequestDTO>();
+        CreateMap<Product, ProductInStorageResponseDTO>();
     }
 }
